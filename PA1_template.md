@@ -1,8 +1,6 @@
 Exploring Personal Activity Data: Steps Over Time
 ========================================================
 
-## Introduction
-
 
 ## Loading the data
 
@@ -55,15 +53,18 @@ The highest activity period is the 835 period.
 
 ## Imputing missing values
 
-I used the mean of five minute intervals across all days to impute the missing step data. The strategy here assumes little variance between days in terms of daily activity. Therefore, the mean from recorded days should reasonably reflect acivity patterns in days with missing data.
+I used the mean of five minute intervals across all days to impute the missing step data. The strategy here assumes little variance between days in terms of daily activity. Therefore, the mean from recorded days should reasonably reflect activity patterns in days with missing data.
 
 
 ```r
 count = 1
 for(observation in data$steps){
         if(is.na(observation)){
-                missing_interval <- data[count,]$interval  # get interval       
-                imputed_steps <- subset(step_interval, Group.1 == missing_interval, select="x")
+                # get the interval
+                missing_interval <- data[count,]$interval 
+                # retrieve the mean from the averaged data set for all days
+                imputed_steps <- subset(step_interval, Group.1 == missing_interval, select="x") 
+                # replace the missing data with the imputed steps
                 data[count,]$steps <- imputed_steps$x
         }
         count <- count + 1

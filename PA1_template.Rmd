@@ -1,8 +1,6 @@
 Exploring Personal Activity Data: Steps Over Time
 ========================================================
 
-## Introduction
-
 
 ## Loading the data
 ```{r, loading_data, echo=TRUE }
