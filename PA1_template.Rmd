@@ -73,7 +73,7 @@ hist(steps_by_day$Steps, col='#2980b9', xlab="Total steps per day",
 
 ```
 
-The number of missing observations is `r missing_count`. The mean and median of the imputed data are `r imputed_steps_mean` and `r imputed_steps_median`, respectively.
+The mean and median of the imputed data are `r imputed_steps_mean` and `r imputed_steps_median`, respectively.
 
 These values do not significantly differ from the original data without imputed values. Given the imputation strategy, this makes sense. The impact of including the imputed values is relatively minimal in this case.
 
